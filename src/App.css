@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+.button {
+  height: 60px;
+  width: 130px;
+  line-height: 60px;
+  font-size: 30px;
+  border: 1px solid #6cacc5;
+  border-radius: 8px;
+  margin: 30px;
+  color: #6cacc5;
+  background: rgba(42, 50, 113, 0.28);
+  cursor: pointer;
+  display: inline-block;
+}
