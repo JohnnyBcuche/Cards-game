@@ -39,7 +39,7 @@ upButton = () => {
   }
   card.value = parseInt(card.value, 10);
    this.setState({image:card.image, value:card.value})
-    console.log(card.value +' = '+ this.state.value )
+    console.log(card.value)
     if (prevCard < this.state.value) {
       console.log('win')
       document.getElementById("winner").innerHTML = "Win (" + prevCard + " < " + card.value + ")"
@@ -49,7 +49,7 @@ upButton = () => {
     }
     else {
       console.log('lose')
-      document.getElementById("winner").innerHTML = "Lose (" + prevCard + " < " + card.value + ")"
+      document.getElementById("winner").innerHTML = "Lose (" + prevCard + " > " + card.value + ")"
     }
   })
   )
@@ -79,7 +79,7 @@ downButton = () => {
   }
   card.value = parseInt(card.value, 10);
    this.setState({image:card.image, value:card.value})
-    console.log(card.value +' = '+ this.state.value )
+    console.log(card.value)
     if (prevCard > this.state.value) {
       console.log('win')
       document.getElementById("winner").innerHTML = "Win (" + prevCard + " > " + card.value + ")"
@@ -89,7 +89,7 @@ downButton = () => {
     }
     else {
       console.log('lose')
-      document.getElementById("winner").innerHTML = "Lose (" + prevCard + " > " + card.value + ")"
+      document.getElementById("winner").innerHTML = "Lose (" + prevCard + " < " + card.value + ")"
     }
   })
   )
