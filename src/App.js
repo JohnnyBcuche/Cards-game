@@ -4,15 +4,13 @@ import './App.css';
 class App extends Component {
 constructor() {
   super()
-  this.state = { deck_id:'', image:'', value:'', result:'' }
+  this.state = { remaining:'', deck_id:'', image:'', value:'', result:'' }
 }
 
 componentDidMount() {     
   fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')       
   .then(response => response.json())       
-  .then(data => this.setState({ deck_id:data.deck_id }))
-  .then(this.upButton)
-  .then(this.downButton)
+  .then(data => this.setState({ deck_id:data.deck_id, remaining:data.remaining }))
 }
 
 upButton = () => { 
@@ -43,7 +41,7 @@ upButton = () => {
     if (prevCard < this.state.value) {
       console.log('win')
       document.getElementById("winner").innerHTML = "Win (" + prevCard + " < " + card.value + ")"
-    } else if (prevCard == this.state.value){
+    } else if (prevCard === this.state.value) {
       console.log('equal')
       document.getElementById("winner").innerHTML = "Draw (" + prevCard + " = " + card.value + ")"
     }
@@ -83,7 +81,7 @@ downButton = () => {
     if (prevCard > this.state.value) {
       console.log('win')
       document.getElementById("winner").innerHTML = "Win (" + prevCard + " > " + card.value + ")"
-    } else if (prevCard == this.state.value){
+    } else if (prevCard === this.state.value) {
       console.log('equal')
       document.getElementById("winner").innerHTML = "Draw (" + prevCard + " = " + card.value + ")"
     }
@@ -98,10 +96,10 @@ downButton = () => {
   render() {
     return (
       <div className="App" >
-        <button onClick={this.upButton} className="button">Up</button>
-        <button onClick={this.downButton} className="button">Down</button>
-        <h1 id="winner"></h1> 
-        <img className="" src={this.state.image} alt="" />
+        <button onClick={this.upButton} className="button btn-up">Bigger</button>
+        <button onClick={this.downButton} className="button btn-dwn">Smaller</button>
+        <h1 id="winner">winner!</h1> 
+        <img className="card" src={this.state.image} alt="" />
       </div>
     );
   }

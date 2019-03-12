@@ -1,16 +1,42 @@
 .App {
   text-align: center;
+  color: #E2CF00;
 }
 .button {
   height: 60px;
   width: 130px;
   line-height: 60px;
   font-size: 30px;
-  border: 1px solid #6cacc5;
   border-radius: 8px;
+  background-color: #fff;
   margin: 30px;
-  color: #6cacc5;
-  background: rgba(42, 50, 113, 0.28);
   cursor: pointer;
   display: inline-block;
+}
+.btn-up {
+  border: 2px solid #D40000;
+  color: #D40000;
+}
+.btn-dwn {
+  border: 2px solid #000;
+  color: #000;
+}
+.card {
+  height: 314px;
+  width: 226px;
+}
+html {
+  background-image: linear-gradient(#044D1F, #0A8A36, #044D1F);
+  background-attachment: fixed;
+}
+
+body {
+  font: 300 18px/1.6 "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 500;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
 }
